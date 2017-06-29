@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Стихотворение</title>
+    <style>
+  body {
+    background: url(https://scontent.xx.fbcdn.net/v/t1.0-9/16807818_1298998726805195_2811569372159263848_n.jpg?oh=76a816b1c4a24c8ed525d93643056213&oe=58FFDD62);
+    background-size: 55%;
+      background-position: left = left center = center left = 0% 50%
+   }
+</style>
+</head>
+<body>
+<div>
+    <center>
+        <p><strong><font size="40" face="Comic Sans MS">{{ row['title'][0] }}</font></strong></p>
+        <p><i><strong><font face="Comic Sans MS">{{ row['year'] }}</font></strong></i></p>
+    </center>
+    </div>
+    <div>
+        <center>
+    {% for r in row['verses'] %}
+            <p><font face="Comic Sans MS"> {{ r | safe}} </font></p>
+    {% endfor %}
+    </center>
+    </div>
+</div>
+
+<div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><font size="5" face="Comic Sans MS">
+                  <a href="{{ url_for('my_page') }}"><center><button>Все стихотворения</button></center></a></font></li>
+                <li class="active"><font size="5" style="float:left;" face="Comic Sans MS">
+                  <a href="{{ url_for('show_poem',
+n = n-1 ) }}"><button>К предыдущему стихотворению</button></a></a></font></li>
+                <li class="active"><font size="5" style="float:right;" face="Comic Sans MS">
+                  <a href="{{ url_for('show_poem',
+n = n+1 ) }}"><right><button>К следующему стихотворению</button></right></a>
+                  </font>
+              </li>
+            </ul>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Судьбы стихотворение</title>
+
+    <style>
+        body {
+        background: url(https://scontent.xx.fbcdn.net/v/t1.0-9/16649487_1299010533470681_2472097687461648878_n.jpg?oh=f29b3f9d476ce0b694d7de9e9694e6ae&oe=593E2DF9);
+    background-size: 55%;
+      background-position: left = left center = center left = 0% 50%;
+        }
+
+  </style>
+</head>
+<div class="outline">
+    <a href="{{ url_for('my_page') }}"><font colour="#1a1a33" face="Comic Sans MS"><button>
+        К стихотворениям</button></font></a>
+</div>
+
+
+<>
+<div>
+    <center>
+        <p><strong><font size="40" face="Comic Sans MS">{{ row['title'][0] }}</font></strong></p>
+        <p><i><strong><font face="Comic Sans MS">{{ row['year'] }}</font></strong></i></p>
+    </center>
+    </div>
+<center>
+    {% for row in row['verses'] %}
+        <p><font face="Comic Sans MS">
+            {{ row | safe}}</font></p>
+    {% endfor %}
+    </center>
+    </div>
+</body>
+
+</table>
+</body>
+</html>
